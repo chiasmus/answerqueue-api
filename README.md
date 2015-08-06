@@ -12,6 +12,10 @@ Then follow the instructions for your operating system below to set up `docker` 
 
  - [Install docker](https://docs.docker.com/installation/)
  - [Install docker-compose](https://docs.docker.com/compose/install/)
+ 
+## Setup
+
+	docker-compose build
 
 ## Running the app
 
