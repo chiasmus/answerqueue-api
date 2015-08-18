@@ -4,8 +4,8 @@ development: &default
   min_messages: WARNING
   pool: 5
   username: postgres
-  host: <%= ENV['ANSWERQUEUE_DB_1_PORT_5432_TCP_ADDR'] %>
-  port: <%= ENV['ANSWERQUEUE_DB_1_PORT_5432_TCP_PORT'] %>
+  host: <%= ENV['ANSWERQUEUEAPI_DB_1_PORT_5432_TCP_ADDR'] %>
+  port: <%= ENV['ANSWERQUEUEAPI_DB_1_PORT_5432_TCP_PORT'] %>
 
 test:
   <<: *default
