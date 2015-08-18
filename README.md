@@ -13,6 +13,47 @@ Then follow the instructions for your operating system below to set up `docker` 
  - [Install docker](https://docs.docker.com/installation/)
  - [Install docker-compose](https://docs.docker.com/compose/install/)
 
+## Setup
+
+### OS X:
+
+First, create a `boot2docker` VM:
+
+	boot2docker init
+
+If you get an error like this:
+
+```
+error in run: Failed to get latest release: Error getting releases: API rate limit exceeded for 173.15.115.65. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)
+```
+
+Run this to manually download the `boot2docker` ISO:
+
+	boot2docker --iso-url=https://github.com/boot2docker/boot2docker/releases/download/v1.7.1/boot2docker.iso download
+
+Then, start the VM:
+
+	boot2docker up
+	$(boot2docker shellinit)"
+
+### All platforms:
+
+Then `cd` into the `answerqueue` folder:
+
+	cd /path/to/answerqueue
+
+Finally, build the docker image:
+
+	docker-compose build
+
+## Set up Rails
+
+Now you can finally set up the Rails instance!
+
+From the `answerqueue` folder:
+
+	docker-compose run web rake db:setup
+
 ## Running the app
 
 After you have completed the above steps, you can then simply run:
